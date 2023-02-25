@@ -4,9 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-            	sh ./web-servier.sh
+                sh ./web-servier.sh
             }
         }
     }
 }
-
