@@ -4,17 +4,19 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh '''echo "This is Build Stage"'''
-            }
-        }
-        stage ('Test') {
-            steps {
-                sh '''echo "This is Test Stage"'''
+                sh '''
+                    sudo yum update -y
+                    sudo yum install -y httpd
+                    sudo systemctl start httpd
+                    systemctl enable httpd
+                '''
             }
         }
         stage ('Deploy') {
             steps {
-                sh '''sudo sh ./script.sh'''
+                sh '''
+                    sudo cp -R /var/www/html/
+                '''
             }
         }
     }
