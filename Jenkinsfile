@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'ansible1'
+        label 'jenkins-agent'
     }
 
     stages {
