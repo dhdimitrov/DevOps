@@ -1,5 +1,7 @@
 pipeline {
-    agent ansible1
+    agent {
+        label 'ansible1'
+    }
 
     stages {
         stage ('Build') {
