@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent ansible1
 
     stages {
         stage ('Build') {
